@@ -1,0 +1,766 @@
+/* src/index.css or App.css */
+@import 'locomotive-scroll/dist/locomotive-scroll.css';
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,body{
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding-top: 0;
+}
+
+/* login page css */
+
+.login-main-div{
+  width: 100%;
+  height: 100vh;
+ background-color:rgb(251, 251, 251);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login-sub-div{
+  width: 80%;
+  height: 70%;
+  
+  display: flex;
+}
+.login-img-div{
+  width: 50%;
+  height: 100%;
+}
+.login-img-div img{
+  
+  height: 100%;
+}
+.login-div{
+  width: 50%;
+  height: 100%;
+  
+  display: flex;
+  flex-direction: column;
+  padding: 12% 5%;
+  
+  align-items: left;
+  justify-content: space-between;
+  font-size: 2vh;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+.details{
+  width: 80%;
+  height: 10%;
+  padding: 4%;
+  font-size: 2vh;
+  border-width: 2px; 
+  border-color: black;
+  font-family: 'RemixIcon';
+font-style: normal;
+font-weight: 300;
+  
+}
+
+.login-div button{
+  
+  background: rgb(222, 49, 70);
+  border: none;
+}
+.fg-pass{
+  width: 80%;
+  height: 10%;
+  display: flex;
+  justify-content: flex-end;
+  color: rgb(0, 115, 255);
+}
+
+
+/* navbar css */
+
+.nav-div{
+  width: 100%;
+  height: 8vh;
+  display: flex;
+  justify-content: space-between;
+  padding: 1% 2% 1% 2%;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  margin: 0;
+  
+  background: rgba(187, 207, 227, 0.17);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.8px);
+  -webkit-backdrop-filter: blur(6.8px);
+  color: rgb(255, 255, 255);
+}
+.category{
+  width: 40%;
+  display: flex;
+  gap: 2%;
+  font-family: "Rubik", serif;
+  font-style: light ;
+  font-weight: 50;
+  justify-content: space-around;
+  align-items: center;
+  color: rgb(0, 0, 0);
+  
+}
+.logo{
+  
+  width: 20%;
+
+}
+.logo img{
+  width: 60%;
+}
+
+/* button css */
+
+.nav-button{
+  width: 8.5vw;
+  height: 6vh;
+  font-size: 17px;
+  background-color: transparent;
+  border: solid 2px;
+  border-color: rgb(163, 163, 163);
+  font-family: "Rubik", serif;
+  font-style: Medium ;
+  font-weight:500;
+  color: rgb(0, 0, 0);
+
+}
+
+
+
+
+/* homepage css */
+
+
+
+.home-main-video{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  color: rgb(0, 0, 0);
+  position: absolute;
+  z-index: -1;
+  
+}
+.home-main-video video{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  z-index: -1;
+}
+.home-main-div{
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  color: rgb(0, 0, 0);
+ position: relative;
+ 
+ z-index: 11;
+}
+.home-main-div p{
+  color: rgb(0, 0, 0);
+}
+.home-text-main{
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home-text-sub{
+  width: 100%;
+  display: flex;
+  align-items: left;
+  justify-content: space-evenly;
+  flex-direction: column;
+  font-family: "Rubik", serif;
+  font-style: Medium ;
+  font-weight:400;
+  padding-left: 10%;
+  padding-right: 10%;
+  height: 50%;
+  
+
+  
+
+}
+
+.home-text-sub h4{
+  font-weight: 800;
+  font-style: bold;
+}
+.home-div-image{
+  width: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+  
+  height: 100%;
+}
+.home-div-image img{
+  width: 70%;
+ 
+}
+
+/* need css */
+
+.need-main-div{
+ 
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(245, 245, 247);
+  position: relative ;
+  display: flex;
+
+  
+}
+.need-text-main{
+  width: 65%;
+  height: 80vh;
+  position: absolute;
+  top: 10%;
+  right: 10%;
+ 
+  display: flex;
+  justify-content: end;
+ border: solid 2px;
+}
+
+.need-text-sub{
+  width: 80%;
+  height: 100%;
+
+  padding: 3%;
+  
+}
+.need-text-sub h1{
+  font-size: 4vh;
+  font-family: "Rubik", serif;
+  font-style: Medium ;
+  font-weight:400;
+}
+.need-text-sub h3{
+  font-size: 3vh;
+  margin-top: 5%;
+  margin-left: 3%;
+  font-family: "Rubik", serif;
+  font-style: Medium ;
+  font-weight:400;
+}
+.need-text-sub h3 sym{
+  font-family: 'RemixIcon';
+font-style: normal;
+font-weight: 300;
+}
+.need-image-div{
+  width: 25vh;
+  height: 25vh;
+  position: absolute;
+
+  top: 65%;
+  right: 65%;
+}
+.need-image-div img{
+  width: 100%;
+  scale: 2;
+
+}
+
+
+/* benifits page css */
+
+.use-main-div{
+  width: 100%;
+  height: 100vh;
+ border-radius: 20px 20px 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("./map.png");
+  background-position: bottom;
+  background-size: cover;
+}
+.use-sub-div{
+  width: 90%;
+  height: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cards{
+  width: 18%;
+  height: 58%;
+  
+background: rgba(191, 200, 200, 0.35);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(8.9px);
+-webkit-backdrop-filter: blur(8.9px);
+border: 1px solid rgba(68, 195, 217, 0.3);
+  border-radius: 20px;
+  display: flex;
+  padding: 1.5%;
+  flex-direction: column;
+  justify-content: space-between;
+ align-items: center;
+ text-align: center;
+ gap: 1%;
+
+}
+.card-img{
+  width: 15vh;
+  height: 15vh;
+  background: linear-gradient(rgb(239, 19, 19),rgb(147, 7, 7));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.card-img img{
+  height: 100%;
+  overflow: hidden;
+}
+.card-txt{
+  font-family: "Rubik", serif;
+  font-style: light ;
+  
+}
+
+
+/* step div css */
+
+.steps-main-div{
+  width: 100%;
+  height: 100vh;
+  background: #dce2e4c3;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.steps-sub-div{
+  width: 90%;
+  height: 80%;
+  
+  position: relative;
+
+}
+.steps-text-div{
+  width: 100%;
+  height: 30%;
+ 
+  text-align: center;
+  padding: 5%;
+}
+.steps-text-div h1{
+  font-family: "Rubik", serif ;
+  font-size: 4vh;
+}
+.steps-text-div h3{
+  font-family: "Rubik", serif ;
+  font-size: 2vh;
+  
+}
+.steps-container-div{
+  width: 100%;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  
+}
+
+.step-card-main{
+width: 25%;
+height: 100%;
+display: flex;
+
+}
+.step-card-sub{
+  width: 90%;
+  height: 80%;
+ 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 10%;
+
+  }
+
+.arrow{
+  width: 10%;
+  height: 100%;
+  margin-top: 10%;
+  
+  
+}
+.arrow h1{
+  font-family: 'RemixIcon';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 7vh;
+  
+}
+.step-img-div{
+  width: 10vh;
+  height: 10vh;
+  border-radius: 50%;
+  background-color:rgb(201, 70, 70);
+  overflow: hidden;
+}
+.step-img-div img{
+  width: 100%;
+ 
+}
+.step-num-div{
+  width: 90%;
+  height: 8%;
+  font-family: "Rubik", serif ;
+  font-size: 2vh;
+ 
+  text-align: center;
+}
+.steps-expln-div{
+width: 90%;
+height: 60%;
+padding: 15%;
+text-align: center;
+font-family: "Rubik", serif ;
+  font-size: 2vh;
+  
+padding-top: 0%;
+}
+
+
+.form-main-div{
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Rubik", serif ;
+  
+}
+.form-sub-div{
+  width: 90%;
+  height: 85vh;
+  margin-top: 5%;
+  
+  display: flex;
+
+}
+.form-mob-img{
+  height: 100%;
+  width: 40%;
+ 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-mob-img img{
+  height: 80%;
+  
+ 
+}
+.form-container-div form{
+  width: 90%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+  justify-content: space-between;
+}
+.form-text-box{
+  padding: 3%;
+  border: solid 2px;
+}
+.form-text-area{
+  font-family: "Rubik", serif ;
+  border: solid 2px;
+  padding: 3%;
+}
+
+
+.mainbox {
+  padding-top: 5%;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 60vh;
+  background-color: rgb(225, 46, 46);
+  font-family: "Rubik", serif ;
+  
+  
+}
+
+.section1 {
+  width: 25%;
+  height: 100%;
+  gap: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 2% 1%;
+letter-spacing: 0;
+
+
+}
+
+.section2 {
+  width: 20%;
+  height: 100%;
+
+
+}
+
+.section3 {
+  width: 15%;
+  height: 100%;
+
+}
+
+.section4 {
+  width: 10%;
+  height: 100%;
+
+}
+
+.section5 {
+  width: 15%;
+  height: 100%;
+
+}
+
+.social {
+  width: 2vw;
+  height: 2vw;
+  background-color: rgb(0, 0, 0);
+  border-radius: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.social i{
+  font-size: 1.5vw;
+}
+
+.media {
+  display: flex;
+  align-items: flex-start;
+  gap: 3%;
+
+}
+
+.mainbox a {
+  text-decoration: none;
+  color: #000;
+}
+
+.mainbox li {
+  list-style-type: none;
+}
+
+.mainbox h5 {
+  font-size: 1.5vw;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+
+}
+
+li:hover {
+  translate: 3%;
+  transition: ease .11s;
+}
+
+li {
+  margin-top: 3vh;
+}
+
+.list {
+  height: 90%;
+  margin-top: 3vh;
+}
+
+.section5 button {
+ 
+  width: 10vw;
+  font-size: 1vw;
+  border: 1px solid black;
+  margin-top: 8%;
+  background-color: black;
+ color: white;
+  
+}
+
+
+
+.section1 h1{
+  font-size: 6vh;
+  font-weight: 500;
+}
+.donor-main-div{
+  width: 100%;
+  height: 100vh;
+  padding: 8vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-family: "Rubik", serif ;
+  flex-direction: column;
+  padding-bottom: 5%;
+}
+.donor-input-div{
+  width: 90%;
+  height: 70vh;
+  
+  display: flex;
+}
+.donor-add-div{
+  width: 50%;
+  height: 100%;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: space-between;
+  padding: 5%;
+
+}
+.donor-add-div input{
+  width: 100%;
+  
+  padding: 2.3%;
+}
+.donor-add-div button{
+  width: 10vw;
+background-color: rgb(216, 47, 67);
+border-color:gray ;
+}
+.donor-map-div{
+  width: 50%;
+  height: 100%;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.donor-map{
+  width: 80%;
+  height: 80%;
+  
+}
+.donor-map iframe{
+  width: 100%;
+  height: 100%;
+}
+.donor-blood-div{
+  width: 30%;
+  height: 10vh;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.donor-blood-div select{
+padding:2% 20%;
+}
+.donor-blood-div Button{
+  background-color: rgb(216, 47, 67)
+  }
+  .donor-result-div{
+    width: 100%;
+   height: fit-content;
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+  .result-main-div{
+width: 90%;
+height: fit-content;
+padding: 5%;
+
+  }
+  .donor-data-div{
+    width: 100%;
+    height: 5vh;
+    background-color: rgb(245, 245, 245);
+    border-radius: 5px;
+    display: flex;
+    margin-bottom: 2%;
+  }
+  .donor-data-name{
+    width: 25%;
+    height: 100%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Rubik", serif ;
+    font-size: 2vh;
+  }
+  .donor-data-number{
+    width: 25%;
+    height: 100%;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Rubik", serif ;
+    font-size: 2vh;
+  }
+  .donor-data-blood{
+    width: 25%;
+    height: 100%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Rubik", serif ;
+    font-size: 2vh;
+  }
+  .donor-data-contact{
+    width: 25%;
+    height: 100%;
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Rubik", serif ;
+    font-size: 2vh;
+  }
+
+  .donor-data-contact button{
+    padding: 5%;
+    height: 100%;
+  }

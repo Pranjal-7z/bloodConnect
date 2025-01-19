@@ -1,0 +1,18 @@
+ {/* <section id='need'>
+          <div data-scroll data-scroll-speed="1" className="need-main-div">
+            <div className='need-text-main'>
+              <div className='need-text-sub'>
+                <h1>Why It Is Important ?</h1>
+                <div ><h3> <sym>&#xEA6C;</sym> It Saves Lives</h3></div>
+                <div > <h3> <sym>&#xEA6C;</sym> It Supports Medical Advancements</h3></div>
+                <div ><h3> <sym>&#xEA6C;</sym> Blood Shortages Are Real</h3></div>
+                <div ><h3> <sym>&#xEA6C;</sym> It's Quick and Simple</h3></div>
+
+              </div>
+            </div>
+            <div className='need-image-div'>
+              <img src="./think.png" alt="" />
+            </div>
+          </div>
+
+        </section> */}
