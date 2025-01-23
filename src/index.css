@@ -774,19 +774,22 @@ padding: 5%;
     width: 100%;
     height: 100vh;
     margin-top: 8vh;
-    background-color: rgb(202, 167, 14);
+    background-color:#E8E8E8;
   }
   .db-profile-info{
     width: 100%;
     height: 10%;
-    background-color: pink;
+  
     display: flex;
   }
   .db-chart-info{
     width: 100%;
     height: 40%;
-    background-color: yellow;
-
+   
+display: flex;
+align-items: center;
+justify-content: space-around;
+font-family: "Rubik", serif ;
   }
   .db-campaign-info{
 width: 100%;
@@ -796,10 +799,140 @@ background-color: red;
   .profile-photo-div{
     width: 50%;
     height: 100%;
-    background-color: green;
+   
+    display: flex;
+    align-items: center;
+    padding-left: 5%;
   }
   .profile-detail-div{
     width: 50%;
     height: 100%;
-    background-color: rgb(132, 15, 249);
+    
+    display: flex;
+    justify-content:right;
+   padding-right: 5%;
+    align-items: center;
+    font-family: "Rubik", serif ;
   }
+  .profile-img-div{
+    width: 8vh;
+    height: 8vh;
+   
+    border-radius: 50%;
+    background-image: url("https://www.profilebakery.com/wp-content/uploads/2024/05/Profile-picture-created-with-ai.jpeg");
+    background-size: cover;
+    background-position: center;
+  }
+  .profile-name-div{
+    width: 20vw;
+    height: 90%;
+  
+    margin-left: 1%;
+    font-family: "Rubik", serif ;
+    font-size: 2vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .detail-main-div{
+    margin-left: 8%;
+  }
+  .detail-info-div{
+    min-width: 6vw;
+    width: max-content;
+    height: 3vh;
+    background-color: rgb(255, 255, 255);
+    padding: 0 6%;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+  }
+  .detail-info-div i{
+    font-weight: 100;
+  }
+  .chart-main-div{
+    width: 15%;
+    height: 80%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .chart-name-div{
+    width: 100%;
+    height: 15%;
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .chart-progress-div{
+    width: 100%;
+    height: 65%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .chart-num-div{
+    width: 100%;
+    height: 20%;
+  
+    display: flex;
+ justify-content: center;
+ 
+ 
+    
+  }
+  .total-num-div{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  }
+  .outoff-num-div{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  }
+  .circle1{
+    width: 70%;
+    height: 70%;
+  }
+  .chart-num-div button{
+   height: 4vh;
+    border-radius: 10px;
+    background-color: #000;
+    color: white;
+    border: none;
+    
+  }
+  .chart-status-div{
+    width: 100%;
+    height: 65%;
+    padding: 0 10%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: red;
+  }
+  .chart-map-div{
+    width: 90%;
+    height: 80%;
+    overflow: hidden;
+    border-radius: 10%;
+  }
+  .chart-map-div img{
+    height: 100%;
+   
+  }
+  
+  
