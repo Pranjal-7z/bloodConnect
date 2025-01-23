@@ -764,3 +764,42 @@ padding: 5%;
     padding: 5%;
     height: 100%;
   }
+  
+  .db-main-div{
+    width: 100%;
+    height: 108vh;
+    background-color: paleturquoise;
+  }
+  .db-sub-div{
+    width: 100%;
+    height: 100vh;
+    margin-top: 8vh;
+    background-color: rgb(202, 167, 14);
+  }
+  .db-profile-info{
+    width: 100%;
+    height: 10%;
+    background-color: pink;
+    display: flex;
+  }
+  .db-chart-info{
+    width: 100%;
+    height: 40%;
+    background-color: yellow;
+
+  }
+  .db-campaign-info{
+width: 100%;
+height: 50%;
+background-color: red;
+  }
+  .profile-photo-div{
+    width: 50%;
+    height: 100%;
+    background-color: green;
+  }
+  .profile-detail-div{
+    width: 50%;
+    height: 100%;
+    background-color: rgb(132, 15, 249);
+  }

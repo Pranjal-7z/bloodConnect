@@ -6,6 +6,7 @@ import Homepage from "./components/Views/homepage"
 import ScrollWrapper from './components/Snipits/ScrollWrapper';
 import Footer from './components/Snipits/Footer';
 import DonorDashboard from './components/Dashboard/DonorDashboard';
+import UserDashboard from './components/Dashboard/UserDashboard';
 
 
 
@@ -18,10 +19,10 @@ const App = () => {
       {/* <Login/> */}
       <Navbar />
       <ScrollWrapper>
-        <Homepage /> 
+        {/* <Homepage />  */}
         {/* <DonorDashboard/> */}
-        <Footer />
-        
+        {/* <Footer /> */}
+        <UserDashboard/>
       </ScrollWrapper>
     </div>
   )
