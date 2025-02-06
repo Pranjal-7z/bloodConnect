@@ -1,12 +1,13 @@
 /* src/index.css or App.css */
-@import 'locomotive-scroll/dist/locomotive-scroll.css';
+@import "locomotive-scroll/dist/locomotive-scroll.css";
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-html,body{
+html,
+body {
   margin: 0;
   padding: 0;
 }
@@ -17,62 +18,63 @@ body {
 
 /* login page css */
 
-.login-main-div{
+.login-main-div {
   width: 100%;
   height: 100vh;
- background-color:rgb(251, 251, 251);
+  background-color: rgb(251, 251, 251);
   display: flex;
   align-items: center;
   justify-content: center;
+  position: fixed;
+  z-index: 99999999999999999999999999;
+  top: 0;
+  left: 0;
 }
-.login-sub-div{
+.login-sub-div {
   width: 80%;
   height: 70%;
-  
+
   display: flex;
 }
-.login-img-div{
+.login-img-div {
   width: 50%;
   height: 100%;
 }
-.login-img-div img{
-  
+.login-img-div img {
   height: 100%;
 }
-.login-div{
+.login-div {
   width: 50%;
   height: 100%;
-  
+
   display: flex;
   flex-direction: column;
   padding: 12% 5%;
-  
+
   align-items: left;
   justify-content: space-between;
   font-size: 2vh;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
-
-.details{
+.details {
   width: 80%;
   height: 10%;
   padding: 4%;
   font-size: 2vh;
-  border-width: 2px; 
+  border-width: 2px;
   border-color: black;
-  font-family: 'RemixIcon';
-font-style: normal;
-font-weight: 300;
-  
+  font-family: "RemixIcon";
+  font-style: normal;
+  font-weight: 300;
 }
 
-.login-div button{
-  
+.login-div button {
   background: rgb(222, 49, 70);
   border: none;
 }
-.fg-pass{
+.fg-pass {
   width: 80%;
   height: 10%;
   display: flex;
@@ -80,10 +82,9 @@ font-weight: 300;
   color: rgb(0, 115, 255);
 }
 
-
 /* navbar css */
 
-.nav-div{
+.nav-div {
   width: 100%;
   height: 8vh;
   display: flex;
@@ -96,37 +97,51 @@ font-weight: 300;
   right: 0;
   z-index: 999;
   margin: 0;
-  
+
   background: rgba(187, 207, 227, 0.17);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(6.8px);
   -webkit-backdrop-filter: blur(6.8px);
   color: rgb(255, 255, 255);
 }
-.category{
+.category {
   width: 40%;
   display: flex;
   gap: 2%;
   font-family: "Rubik", serif;
-  font-style: light ;
+  font-style: light;
   font-weight: 50;
   justify-content: space-around;
   align-items: center;
   color: rgb(0, 0, 0);
-  
 }
-.logo{
-  
+.logo {
   width: 20%;
-
 }
-.logo img{
+.logo img {
   width: 60%;
+}
+
+.link-nav {
+  text-decoration: none;
+  color: inherit;
+}
+
+.link-nav:visited {
+  color: inherit;
+}
+
+.link-nav:hover {
+  color: #000000;
+}
+
+.link-nav:focus {
+  outline: none;
 }
 
 /* button css */
 
-.nav-button{
+.nav-button {
   width: 8.5vw;
   height: 6vh;
   font-size: 17px;
@@ -134,142 +149,126 @@ font-weight: 300;
   border: solid 2px;
   border-color: rgb(163, 163, 163);
   font-family: "Rubik", serif;
-  font-style: Medium ;
-  font-weight:500;
+  font-style: Medium;
+  font-weight: 500;
   color: rgb(0, 0, 0);
-
 }
-
-
-
 
 /* homepage css */
 
-
-
-.home-main-video{
+.home-main-video {
   width: 100%;
   height: 100vh;
   display: flex;
   color: rgb(0, 0, 0);
   position: absolute;
   z-index: -1;
-  
 }
-.home-main-video video{
+.home-main-video video {
   width: 100%;
   height: 100%;
   object-fit: cover;
   position: absolute;
   z-index: -1;
 }
-.home-main-div{
+.home-main-div {
   position: absolute;
   z-index: 999;
   width: 100%;
   height: 100vh;
   display: flex;
   color: rgb(0, 0, 0);
- position: relative;
- 
- z-index: 11;
+  position: relative;
+
+  z-index: 11;
 }
-.home-main-div p{
+.home-main-div p {
   color: rgb(0, 0, 0);
 }
-.home-text-main{
+.home-text-main {
   height: 100%;
   width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.home-text-sub{
+.home-text-sub {
   width: 100%;
   display: flex;
   align-items: left;
   justify-content: space-evenly;
   flex-direction: column;
   font-family: "Rubik", serif;
-  font-style: Medium ;
-  font-weight:400;
+  font-style: Medium;
+  font-weight: 400;
   padding-left: 10%;
   padding-right: 10%;
   height: 50%;
-  
-
-  
-
 }
 
-.home-text-sub h4{
+.home-text-sub h4 {
   font-weight: 800;
   font-style: bold;
 }
-.home-div-image{
+.home-div-image {
   width: 50%;
-display: flex;
-align-items: center;
-justify-content: center;
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   height: 100%;
 }
-.home-div-image img{
+.home-div-image img {
   width: 70%;
- 
 }
 
 /* need css */
 
-.need-main-div{
- 
+.need-main-div {
   width: 100%;
   height: 100vh;
   background-color: rgb(245, 245, 247);
-  position: relative ;
+  position: relative;
   display: flex;
-
-  
 }
-.need-text-main{
+.need-text-main {
   width: 65%;
   height: 80vh;
   position: absolute;
   top: 10%;
   right: 10%;
- 
+
   display: flex;
   justify-content: end;
- border: solid 2px;
+  border: solid 2px;
 }
 
-.need-text-sub{
+.need-text-sub {
   width: 80%;
   height: 100%;
 
   padding: 3%;
-  
 }
-.need-text-sub h1{
+.need-text-sub h1 {
   font-size: 4vh;
   font-family: "Rubik", serif;
-  font-style: Medium ;
-  font-weight:400;
+  font-style: Medium;
+  font-weight: 400;
 }
-.need-text-sub h3{
+.need-text-sub h3 {
   font-size: 3vh;
   margin-top: 5%;
   margin-left: 3%;
   font-family: "Rubik", serif;
-  font-style: Medium ;
-  font-weight:400;
+  font-style: Medium;
+  font-weight: 400;
 }
-.need-text-sub h3 sym{
-  font-family: 'RemixIcon';
-font-style: normal;
-font-weight: 300;
+.need-text-sub h3 sym {
+  font-family: "RemixIcon";
+  font-style: normal;
+  font-weight: 300;
 }
-.need-image-div{
+.need-image-div {
   width: 25vh;
   height: 25vh;
   position: absolute;
@@ -277,19 +276,17 @@ font-weight: 300;
   top: 65%;
   right: 65%;
 }
-.need-image-div img{
+.need-image-div img {
   width: 100%;
   scale: 2;
-
 }
-
 
 /* benifits page css */
 
-.use-main-div{
+.use-main-div {
   width: 100%;
   height: 100vh;
- border-radius: 20px 20px 0 0;
+  border-radius: 20px 20px 0 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -297,7 +294,7 @@ font-weight: 300;
   background-position: bottom;
   background-size: cover;
 }
-.use-sub-div{
+.use-sub-div {
   width: 90%;
   height: 80%;
   display: flex;
@@ -305,50 +302,47 @@ font-weight: 300;
   align-items: center;
 }
 
-.cards{
+.cards {
   width: 18%;
   height: 58%;
-  
-background: rgba(191, 200, 200, 0.35);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(8.9px);
--webkit-backdrop-filter: blur(8.9px);
-border: 1px solid rgba(68, 195, 217, 0.3);
+
+  background: rgba(191, 200, 200, 0.35);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.9px);
+  -webkit-backdrop-filter: blur(8.9px);
+  border: 1px solid rgba(68, 195, 217, 0.3);
   border-radius: 20px;
   display: flex;
   padding: 1.5%;
   flex-direction: column;
   justify-content: space-between;
- align-items: center;
- text-align: center;
- gap: 1%;
-
+  align-items: center;
+  text-align: center;
+  gap: 1%;
 }
-.card-img{
+.card-img {
   width: 15vh;
   height: 15vh;
-  background: linear-gradient(rgb(239, 19, 19),rgb(147, 7, 7));
+  background: linear-gradient(rgb(239, 19, 19), rgb(147, 7, 7));
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
 }
-.card-img img{
+.card-img img {
   height: 100%;
   overflow: hidden;
 }
-.card-txt{
+.card-txt {
   font-family: "Rubik", serif;
-  font-style: light ;
-  
+  font-style: light;
 }
-
 
 /* step div css */
 
-.steps-main-div{
+.steps-main-div {
   width: 100%;
   height: 100vh;
   background: #dce2e4c3;
@@ -358,134 +352,119 @@ border: 1px solid rgba(68, 195, 217, 0.3);
   align-items: center;
   flex-direction: column;
 }
-.steps-sub-div{
+.steps-sub-div {
   width: 90%;
   height: 80%;
-  
-  position: relative;
 
+  position: relative;
 }
-.steps-text-div{
+.steps-text-div {
   width: 100%;
   height: 30%;
- 
+
   text-align: center;
   padding: 5%;
 }
-.steps-text-div h1{
-  font-family: "Rubik", serif ;
+.steps-text-div h1 {
+  font-family: "Rubik", serif;
   font-size: 4vh;
 }
-.steps-text-div h3{
-  font-family: "Rubik", serif ;
+.steps-text-div h3 {
+  font-family: "Rubik", serif;
   font-size: 2vh;
-  
 }
-.steps-container-div{
+.steps-container-div {
   width: 100%;
   height: 70%;
   display: flex;
   align-items: center;
   justify-content: center;
-  
-  
 }
 
-.step-card-main{
-width: 25%;
-height: 100%;
-display: flex;
-
+.step-card-main {
+  width: 25%;
+  height: 100%;
+  display: flex;
 }
-.step-card-sub{
+.step-card-sub {
   width: 90%;
   height: 80%;
- 
+
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   padding-top: 10%;
+}
 
-  }
-
-.arrow{
+.arrow {
   width: 10%;
   height: 100%;
   margin-top: 10%;
-  
-  
 }
-.arrow h1{
-  font-family: 'RemixIcon';
+.arrow h1 {
+  font-family: "RemixIcon";
   font-style: normal;
   font-weight: 300;
   font-size: 7vh;
-  
 }
-.step-img-div{
+.step-img-div {
   width: 10vh;
   height: 10vh;
   border-radius: 50%;
-  background-color:rgb(201, 70, 70);
+  background-color: rgb(201, 70, 70);
   overflow: hidden;
 }
-.step-img-div img{
+.step-img-div img {
   width: 100%;
- 
 }
-.step-num-div{
+.step-num-div {
   width: 90%;
   height: 8%;
-  font-family: "Rubik", serif ;
+  font-family: "Rubik", serif;
   font-size: 2vh;
- 
+
   text-align: center;
 }
-.steps-expln-div{
-width: 90%;
-height: 60%;
-padding: 15%;
-text-align: center;
-font-family: "Rubik", serif ;
+.steps-expln-div {
+  width: 90%;
+  height: 60%;
+  padding: 15%;
+  text-align: center;
+  font-family: "Rubik", serif;
   font-size: 2vh;
-  
-padding-top: 0%;
+
+  padding-top: 0%;
 }
 
-
-.form-main-div{
+.form-main-div {
   width: 100%;
   height: 100vh;
 
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Rubik", serif ;
-  
+  font-family: "Rubik", serif;
 }
-.form-sub-div{
+.form-sub-div {
   width: 90%;
   height: 85vh;
   margin-top: 5%;
-  
-  display: flex;
 
+  display: flex;
 }
-.form-mob-img{
+.form-mob-img {
   height: 100%;
   width: 40%;
- 
+
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.form-mob-img img{
+.form-mob-img img {
   height: 80%;
-  
- 
 }
-.form-container-div form{
+.form-container-div form {
   width: 90%;
   height: 90%;
   display: flex;
@@ -493,16 +472,15 @@ padding-top: 0%;
   padding: 2%;
   justify-content: space-between;
 }
-.form-text-box{
+.form-text-box {
   padding: 3%;
   border: solid 2px;
 }
-.form-text-area{
-  font-family: "Rubik", serif ;
+.form-text-area {
+  font-family: "Rubik", serif;
   border: solid 2px;
   padding: 3%;
 }
-
 
 .mainbox {
   padding-top: 5%;
@@ -511,9 +489,7 @@ padding-top: 0%;
   width: 100%;
   height: 60vh;
   background-color: rgb(225, 46, 46);
-  font-family: "Rubik", serif ;
-  
-  
+  font-family: "Rubik", serif;
 }
 
 .section1 {
@@ -524,34 +500,27 @@ padding-top: 0%;
   flex-direction: column;
   justify-content: flex-start;
   padding: 2% 1%;
-letter-spacing: 0;
-
-
+  letter-spacing: 0;
 }
 
 .section2 {
   width: 20%;
   height: 100%;
-
-
 }
 
 .section3 {
   width: 15%;
   height: 100%;
-
 }
 
 .section4 {
   width: 10%;
   height: 100%;
-
 }
 
 .section5 {
   width: 15%;
   height: 100%;
-
 }
 
 .social {
@@ -564,7 +533,7 @@ letter-spacing: 0;
   justify-content: center;
   color: white;
 }
-.social i{
+.social i {
   font-size: 1.5vw;
 }
 
@@ -572,7 +541,6 @@ letter-spacing: 0;
   display: flex;
   align-items: flex-start;
   gap: 3%;
-
 }
 
 .mainbox a {
@@ -591,12 +559,11 @@ letter-spacing: 0;
 .section {
   display: flex;
   flex-direction: column;
-
 }
 
 li:hover {
   translate: 3%;
-  transition: ease .11s;
+  transition: ease 0.11s;
 }
 
 li {
@@ -609,23 +576,19 @@ li {
 }
 
 .section5 button {
- 
   width: 10vw;
   font-size: 1vw;
   border: 1px solid black;
   margin-top: 8%;
   background-color: black;
- color: white;
-  
+  color: white;
 }
 
-
-
-.section1 h1{
+.section1 h1 {
   font-size: 6vh;
   font-weight: 500;
 }
-.donor-main-div{
+.donor-main-div {
   width: 100%;
   height: 100vh;
   padding: 8vh;
@@ -633,56 +596,53 @@ li {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  font-family: "Rubik", serif ;
+  font-family: "Rubik", serif;
   flex-direction: column;
   padding-bottom: 5%;
 }
-.donor-input-div{
+.donor-input-div {
   width: 90%;
   height: 70vh;
-  
+
   display: flex;
 }
-.donor-add-div{
+.donor-add-div {
   width: 50%;
   height: 100%;
-  
+
   display: flex;
   flex-direction: column;
   align-items: left;
   justify-content: space-between;
   padding: 5%;
-
 }
-.donor-add-div input{
+.donor-add-div input {
   width: 100%;
-  
+
   padding: 2.3%;
 }
-.donor-add-div button{
+.donor-add-div button {
   width: 10vw;
-background-color: rgb(216, 47, 67);
-border-color:gray ;
+  background-color: rgb(216, 47, 67);
+  border-color: gray;
 }
-.donor-map-div{
+.donor-map-div {
   width: 50%;
   height: 100%;
-  
+
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
-.donor-map{
+.donor-map {
   width: 80%;
   height: 80%;
-  
 }
-.donor-map iframe{
+.donor-map iframe {
   width: 100%;
   height: 100%;
 }
-.donor-blood-div{
+.donor-blood-div {
   width: 30%;
   height: 10vh;
 
@@ -690,249 +650,518 @@ border-color:gray ;
   justify-content: space-between;
   align-items: center;
 }
-.donor-blood-div select{
-padding:2% 20%;
+.donor-blood-div select {
+  padding: 2% 20%;
 }
-.donor-blood-div Button{
-  background-color: rgb(216, 47, 67)
-  }
-  .donor-result-div{
-    width: 100%;
-   height: fit-content;
-   
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.donor-blood-div Button {
+  background-color: rgb(216, 47, 67);
+}
+.donor-result-div {
+  width: 100%;
+  height: fit-content;
 
-  }
-  .result-main-div{
-width: 90%;
-height: fit-content;
-padding: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.result-main-div {
+  width: 90%;
+  height: fit-content;
+  padding: 5%;
+}
+.donor-data-div {
+  width: 100%;
+  height: 5vh;
+  background-color: rgb(245, 245, 245);
+  border-radius: 5px;
+  display: flex;
+  margin-bottom: 2%;
+}
+.donor-data-name {
+  width: 25%;
+  height: 100%;
 
-  }
-  .donor-data-div{
-    width: 100%;
-    height: 5vh;
-    background-color: rgb(245, 245, 245);
-    border-radius: 5px;
-    display: flex;
-    margin-bottom: 2%;
-  }
-  .donor-data-name{
-    width: 25%;
-    height: 100%;
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: "Rubik", serif ;
-    font-size: 2vh;
-  }
-  .donor-data-number{
-    width: 25%;
-    height: 100%;
-  
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: "Rubik", serif ;
-    font-size: 2vh;
-  }
-  .donor-data-blood{
-    width: 25%;
-    height: 100%;
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: "Rubik", serif ;
-    font-size: 2vh;
-  }
-  .donor-data-contact{
-    width: 25%;
-    height: 100%;
-   
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: "Rubik", serif ;
-    font-size: 2vh;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Rubik", serif;
+  font-size: 2vh;
+}
+.donor-data-number {
+  width: 25%;
+  height: 100%;
 
-  .donor-data-contact button{
-    padding: 5%;
-    height: 100%;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Rubik", serif;
+  font-size: 2vh;
+}
+.donor-data-blood {
+  width: 25%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Rubik", serif;
+  font-size: 2vh;
+}
+.donor-data-contact {
+  width: 25%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Rubik", serif;
+  font-size: 2vh;
+}
+
+.donor-data-contact button {
+  padding: 5%;
+  height: 100%;
+}
+
+.db-main-div {
+  width: 100%;
+  height: 100vh;
+}
+.db-sub-div {
+  width: 100%;
+  height: 100vh;
+  margin-top: 8vh;
+  background-color: #e8e8e8;
+}
+.db-profile-info {
+  width: 100%;
+  height: 10%;
+
+  display: flex;
+}
+.db-chart-info {
+  width: 100%;
+  height: 40%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-family: "Rubik", serif;
+}
+.db-campaign-info {
+  width: 100%;
+  height: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.profile-photo-div {
+  width: 50%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  padding-left: 5%;
+}
+.profile-detail-div {
+  width: 50%;
+  height: 100%;
+
+  display: flex;
+  justify-content: right;
+  padding-right: 5%;
+  align-items: center;
+  font-family: "Rubik", serif;
+}
+.profile-img-div {
+  width: 8vh;
+  height: 8vh;
+
+  border-radius: 50%;
+  background-image: url("https://www.profilebakery.com/wp-content/uploads/2024/05/Profile-picture-created-with-ai.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+.profile-name-div {
+  width: 20vw;
+  height: 90%;
+
+  margin-left: 1%;
+  font-family: "Rubik", serif;
+  font-size: 2vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.detail-main-div {
+  margin-left: 8%;
+}
+.detail-info-div {
+  min-width: 6vw;
+  width: max-content;
+  height: 3vh;
+  background-color: rgb(255, 255, 255);
+  padding: 0 6%;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+}
+.detail-info-div i {
+  font-weight: 100;
+}
+.chart-main-div {
+  width: 15%;
+  height: 80%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.chart-name-div {
+  width: 100%;
+  height: 15%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.chart-progress-div {
+  width: 100%;
+  height: 65%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.chart-num-div {
+  width: 100%;
+  height: 20%;
+
+  display: flex;
+  justify-content: center;
+}
+.total-num-div {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.outoff-num-div {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.circle1 {
+  width: 70%;
+  height: 70%;
+}
+.chart-num-div button {
+  height: 4vh;
+  border-radius: 10px;
+  background-color: #000;
+  color: white;
+  border: none;
+}
+.chart-status-div {
+  width: 100%;
+  height: 65%;
+  padding: 0 10%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: red;
+}
+.chart-map-div {
+  width: 90%;
+  height: 80%;
+  overflow: hidden;
+  border-radius: 10%;
+}
+.chart-map-div img {
+  height: 100%;
+}
+.campaign-sub-div {
+  width: 90%;
+  height: 90%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.campaign-slide-div {
+  width: 70%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+.campaign-slide-div img {
+  width: 35%;
+}
+
+.campaign-message-div {
+  width: 25%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  font-family: "Rubik", serif;
+  padding-left: 2%;
+}
+.slide-right-button {
+  width: fit-content;
+  height: fit-content;
+
+  position: absolute;
+  z-index: 999;
+  right: 2%;
+  top: 50%;
+}
+.slide-left-button {
+  width: fit-content;
+  height: fit-content;
+
+  position: absolute;
+  z-index: 999;
+  left: 2%;
+  top: 50%;
+}
+.slide-left-button button {
+  width: 5vh;
+  height: 5vh;
+  border-radius: 50%;
+  border: none;
+}
+.slide-right-button button {
+  width: 5vh;
+  height: 5vh;
+  border-radius: 50%;
+  border: none;
+}
+.campaign-big-slide {
+  height: 100%;
+  width: 300%;
+}
+.campaign-big-slide img {
+  aspect-ratio: 100%;
+}
+
+.campaign-contact-div {
+  width: 80%;
+  height: 10%;
+
+  display: flex;
+  margin: 5% 5%;
+}
+.contact-img-div {
+  width: 4.5vh;
+  height: 4.5vh;
+  background-color: pink;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.contact-name-div {
+  margin-left: 5%;
+  width: 80%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+.contact-img-div img {
+  height: 100%;
+}
+.sidebar-main-div {
+  width: 20%;
+  height: 92vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: rgb(239, 239, 239);
+
+  margin-top: 8vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1% 0;
+}
+.slidebar-profile-div {
+  width: 100%;
+  height: 15%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slidebar-pages-div {
+  width: 100%;
+  height: 65%;
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  margin-top: 10%;
+}
+.slidebar-logout-div {
+  width: 100%;
+  height: 10%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slidebar-img-div {
+  width: 7vh;
+  height: 7vh;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 3%;
+}
+.slidebar-img-div img {
+  width: 100%;
+}
+.slidebar-profile-main {
+  display: flex;
+
+  width: 80%;
+  align-items: center;
+  font-family: "Rubik", serif;
+}
+.slidebar-name-div {
+  height: 90%;
+
+  font-family: "Rubik", serif;
+  font-size: 2vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.slidebar-page-main {
+  font-family: "Rubik", serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 60%;
+  width: 80%;
+  padding-left: 3%;
+
+  font-size: 2.5vh;
+  font-weight: 100;
+}
+.slidebar-logout-main {
+  font-family: "Rubik", serif;
+  display: flex;
+  flex-direction: column;
+
+  height: 70%;
+  width: 80%;
+  padding-left: 3%;
+
+  font-size: 2.5vh;
+  font-weight: 100;
+}
+.admin-main-div {
+  width: 80%;
+  height: 92vh;
   
-  .db-main-div{
-    width: 100%;
-    height: 108vh;
-    background-color: paleturquoise;
-  }
-  .db-sub-div{
-    width: 100%;
-    height: 100vh;
-    margin-top: 8vh;
-    background-color:#E8E8E8;
-  }
-  .db-profile-info{
-    width: 100%;
-    height: 10%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.dashboard-main-div {
+  width: 100%;
+  height: 100%;
+ background-color: rgb(255, 255, 255);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-family: "Rubik", serif;
+  display: flex;
+  flex-direction: column;
+}
+.dashboard-block-div {
+  width: 100%;
+  height: 30%;
   
-    display: flex;
-  }
-  .db-chart-info{
-    width: 100%;
-    height: 40%;
-   
-display: flex;
-align-items: center;
-justify-content: space-around;
-font-family: "Rubik", serif ;
-  }
-  .db-campaign-info{
-width: 100%;
-height: 50%;
-background-color: red;
-  }
-  .profile-photo-div{
-    width: 50%;
-    height: 100%;
-   
-    display: flex;
-    align-items: center;
-    padding-left: 5%;
-  }
-  .profile-detail-div{
-    width: 50%;
-    height: 100%;
-    
-    display: flex;
-    justify-content:right;
-   padding-right: 5%;
-    align-items: center;
-    font-family: "Rubik", serif ;
-  }
-  .profile-img-div{
-    width: 8vh;
-    height: 8vh;
-   
-    border-radius: 50%;
-    background-image: url("https://www.profilebakery.com/wp-content/uploads/2024/05/Profile-picture-created-with-ai.jpeg");
-    background-size: cover;
-    background-position: center;
-  }
-  .profile-name-div{
-    width: 20vw;
-    height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.block-main-div {
+  width: 18%;
+  height: 35%;
   
-    margin-left: 1%;
-    font-family: "Rubik", serif ;
-    font-size: 2vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .detail-main-div{
-    margin-left: 8%;
-  }
-  .detail-info-div{
-    min-width: 6vw;
-    width: max-content;
-    height: 3vh;
-    background-color: rgb(255, 255, 255);
-    padding: 0 6%;
-    display: flex;
-    align-items: center;
-    border-radius: 5px;
-  }
-  .detail-info-div i{
-    font-weight: 100;
-  }
-  .chart-main-div{
-    width: 15%;
-    height: 80%;
-    background-color: rgb(255, 255, 255);
-    border-radius: 5%;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
-  .chart-name-div{
-    width: 100%;
-    height: 15%;
-   
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .chart-progress-div{
-    width: 100%;
-    height: 65%;
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .chart-num-div{
-    width: 100%;
-    height: 20%;
+  display: flex;
+  border-radius: 10px;
+  padding: 1%;
   
-    display: flex;
- justify-content: center;
- 
- 
-    
-  }
-  .total-num-div{
-    width: 50%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-  }
-  .outoff-num-div{
-    width: 50%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-  }
-  .circle1{
-    width: 70%;
-    height: 70%;
-  }
-  .chart-num-div button{
-   height: 4vh;
-    border-radius: 10px;
-    background-color: #000;
-    color: white;
-    border: none;
-    
-  }
-  .chart-status-div{
-    width: 100%;
-    height: 65%;
-    padding: 0 10%;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: red;
-  }
-  .chart-map-div{
-    width: 90%;
-    height: 80%;
-    overflow: hidden;
-    border-radius: 10%;
-  }
-  .chart-map-div img{
-    height: 100%;
-   
-  }
+}
+.block1{
+  background-color:rgb(21, 202, 183);
+}
+.block2{
+  background-color: rgb(246, 181, 62);
+}
+.block3{
+  background-color: rgb(239, 139, 90);
+}
+.block4{
+  background-color: rgb(232, 94, 119);
+}
+.block-icon-div {
+  width: 30%;
+  height: 100%;
+
+  font-size: 6vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.block-info-div {
+  width: 70%;
+  height: 100%;
+}
+.block-num-div {
+  width: 100%;
+  height: 60%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4vh;
+}
+.block-name-div {
+  width: 100%;
+  height: 40%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dashboard-chart-div {
+  width: 100%;
+  height: 70%;
   
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dashboard-doughnut-container{
+  width: 80%;
+  height: 80%;
+
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

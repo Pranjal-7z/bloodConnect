@@ -27,4 +27,12 @@
       }
     ]
 
+    export const setLocolStorage=()=>{
+      localStorage.setItem("user",JSON.stringify(users))
+    }
+    export const getLocolStorage=()=>{
+      const users=JSON.parse(localStorage.getItem("user"))
+      
+    }
+
  
