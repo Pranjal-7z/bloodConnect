@@ -1,9 +1,22 @@
 import { Circle } from 'rc-progress'
 import React from 'react'
 import Button from '../Snipits/Butoon'
-
+import Footer from '../Snipits/Footer'
+import { useLocation } from 'react-router-dom'
 
 const UserDashboard = () => {
+  const storedUser = JSON.parse(localStorage.getItem("logeduser"));
+
+  const user={
+    name:storedUser.name ,
+    profession:storedUser.profession,
+    number:storedUser.phone,
+    email:storedUser.email,
+    blood:storedUser.blood_group,
+    donation:storedUser.blood_donated_this_year,
+    days:storedUser.days_since_last_donation,
+    gender:storedUser.gender,
+  }
   return (
     <div>
       <div className="db-main-div">
@@ -11,43 +24,43 @@ const UserDashboard = () => {
           <div className="db-profile-info">
             <div className="profile-photo-div">
               <div className="profile-img-div"></div>
-              <div className="profile-name-div"><h3>Pranjal Jawalkar</h3> <p>student</p></div>
+              <div className="profile-name-div"><h3>{user.name}</h3> <p>{user.profession}</p></div>
             </div>
             <div className="profile-detail-div">
               <div className="detail-main-div">
                 <h4>Phone</h4>
-                <div className="detail-info-div"> <h5><i class="ri-phone-line"></i>  7030821605</h5></div>
+                <div className="detail-info-div"> <h5><i class="ri-phone-line"></i>  {user.number}</h5></div>
               </div>
               <div className="detail-main-div">
                 <h4>Email</h4>
-                <div className="detail-info-div">  <h5><i class="ri-mail-line"></i>  Pranjal@gmail.com</h5></div>
+                <div className="detail-info-div">  <h5><i class="ri-mail-line"></i>  {user.email}</h5></div>
               </div>
               <div className="detail-main-div">
                 <h4>Blood Group</h4>
-                <div className="detail-info-div">  <h5><i class="ri-drop-line"></i>  B+</h5></div>
+                <div className="detail-info-div">  <h5><i class="ri-drop-line"></i>  {user.blood}</h5></div>
               </div>
             </div>
           </div>
           <div className="db-chart-info">
             <div className="chart-main-div">
               <div className="chart-name-div"><h3>Donated This Year</h3></div>
-              <div className="chart-progress-div"><Circle className='circle1' percent={25} strokeWidth={8} trailWidth={8} strokeColor="#003290" /></div>
+              <div className="chart-progress-div"><Circle className='circle1' percent={(user.donation/(user.gender=="Male" ?4:3))*100} strokeWidth={8} trailWidth={8} strokeColor="#003290" /></div>
               <div className="chart-num-div">
-                <div className="total-num-div"><h4>total:4</h4></div>
-                <div className="outoff-num-div"><h4>Donated: 1</h4></div>
+                <div className="total-num-div"><h4>total: {(user.gender=="Male" ?4:3)}</h4></div>
+                <div className="outoff-num-div"><h4>Donated: {user.donation}</h4></div>
               </div>
             </div>
             <div className="chart-main-div">
               <div className="chart-name-div"><h3>Next Donation</h3></div>
-              <div className="chart-progress-div"><Circle className='circle1' percent={83} strokeWidth={8} trailWidth={8} strokeColor="#FF7700" /></div>
+              <div className="chart-progress-div"><Circle className='circle1' percent={((user.days)/(user.gender=="Male" ?90:120))*100} strokeWidth={8} trailWidth={8} strokeColor="#FF7700" /></div>
               <div className="chart-num-div">
-                <div className="total-num-div"><h4>total: <br /> 90 days</h4></div>
-                <div className="outoff-num-div"><h4>remaining : <br /> 15 days</h4></div>
+                <div className="total-num-div"><h4>total: <br />{(user.gender=="Male" ?90:120)} days</h4></div>
+                <div className="outoff-num-div"><h4>remaining : <br /> {(user.gender=="Male" ?90:120)-user.days} days</h4></div>
               </div>
             </div>
             <div className="chart-main-div">
               <div className="chart-name-div"><h3>Your Status</h3></div>
-              <div className="chart-status-div"><h1>Not  Available</h1></div>
+              <div className="chart-status-div" ><h1>{((user.gender=="Male" ?90:120)-user.days)<=0?"Available" :"Not Available"}</h1></div>
               <div className="chart-num-div">
                 <Button name="refresh" />
               </div>
@@ -103,6 +116,7 @@ const UserDashboard = () => {
       </div>
     </div>
       </div >
+      <Footer />
     </div >
   )
 }

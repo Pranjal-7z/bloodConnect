@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Butoon from '../Snipits/Butoon';
+import { Link } from 'react-router-dom';
 
 
 const Signup = () => {
@@ -27,8 +28,9 @@ const Signup = () => {
   };
 
   return (
-    <div className='signup-main-div'>
+    
     <div className="signup-page">
+      <div className='signup-main-div'>
       <form onSubmit={handleSubmit} className="register-form">
         <h1>Register</h1>
         <div className='hello'>
@@ -131,12 +133,17 @@ const Signup = () => {
             required 
           />
         </div>
-       <Butoon name='Register'/>
-        
+       
+        <div className="loger">
+        <Butoon name="Register"/>
+
+       <Link to="/Login"> <h4>already have account</h4></Link>
+        </div>
       </form>
+      </div>
+      <div className="signup-img-div"><img src="src\assets\Images\signup.gif" alt="" /></div>
     </div>
-    <img src="src\assets\Images\signup.gif" alt="" />
-    </div>
+
   );
 };
 

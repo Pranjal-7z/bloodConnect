@@ -1,8 +1,10 @@
 import React from 'react'
 import Butoon from '../Snipits/Butoon'
 import "remixicon/fonts/remixicon.css";
+import { Link } from 'react-router-dom';
 
 const Home = () => {
+    
     return (
         <div>
             <section id='home'>
@@ -16,7 +18,7 @@ const Home = () => {
                                 <h4>Your Contribution Matters – Make an Impact Today.</h4>
                                 <p>Blood Connect is more than just a platform – it's a bridge of hope between those in need and those willing to help. With real-time tracking, easy connectivity, and a growing network of donors and recipients, we aim to simplify the blood donation process. Whether you're saving lives as a donor or finding urgent help for a loved one, Blood Connect ensures that every drop counts. Join us in building a community where saving lives becomes second nature.</p>
                                 <div className='home-text-button'>
-                                    <Butoon name='Register' />
+                                   <Link to='/signup'> <Butoon name='Register' /></Link>
                                 </div></div>
                         </div>
 

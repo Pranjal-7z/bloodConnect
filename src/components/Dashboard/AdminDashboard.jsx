@@ -1,14 +1,16 @@
-import React from 'react'
-import Dashboard from '../Views/Dashboard'
+import React from "react";
+import Sidebar from "../Snipits/Sidebar";
+import { Outlet } from "react-router-dom";
 
 const AdminDashboard = () => {
   return (
-    <div>
-        <div className="admin-main-div">
-          <Dashboard/>
-        </div>
+    <div className="admin-main-div" >
+      
+      <Sidebar />
+      <Outlet />
+      
     </div>
-  )
-}
+  );
+};
 
-export default AdminDashboard
+export default AdminDashboard;

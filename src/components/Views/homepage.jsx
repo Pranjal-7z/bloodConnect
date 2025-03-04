@@ -4,6 +4,7 @@ import Enquery from './Enquery'
 import Home from './home'
 import Cards from './Cards'
 import Steps from './Steps'
+import Footer from '../Snipits/Footer';
 const Homepage = () => {
 
 
@@ -13,6 +14,7 @@ const Homepage = () => {
        <Cards/>
        <Steps/>
        <Enquery/>
+       <Footer/>
       </>
     
   )

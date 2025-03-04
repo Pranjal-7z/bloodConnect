@@ -1,68 +1,59 @@
-import React, { useEffect, useState } from 'react'
-import Login from './components/Auth/Login'
+import React, { useEffect, useState } from "react";
+import Homepage from "./components/Views/homepage";
 import Navbar from "./components/Snipits/navbar";
-
-import Homepage from "./components/Views/homepage"
-import ScrollWrapper from './components/Snipits/ScrollWrapper';
-import Footer from './components/Snipits/Footer';
-import DonorDashboard from './components/Dashboard/DonorDashboard';
-import UserDashboard from './components/Dashboard/UserDashboard';
-import { getLocolStorage, setLocolStorage } from './Utils/LocalStorage';
-import { Route, Routes } from 'react-router-dom';
-import AdminDashboard from './components/Dashboard/AdminDashboard';
-import Slidebar from './components/Snipits/Sidebar'
+import Footer from "./components/Snipits/Footer";
+import Login from "./components/Auth/Login";
+import DonorDashboard from "./components/Dashboard/DonorDashboard";
+import UserDashboard from "./components/Dashboard/UserDashboard";
+import AdminDashboard from "./components/Dashboard/AdminDashboard";
+import ScrollWrapper from "./components/Snipits/ScrollWrapper";
+import { Route, Routes } from "react-router-dom";
+import Register from "./components/Dashboard/Register";
+import DonorList from "./components/Dashboard/DonorList";
+import Dashboard from "./components/Views/Dashboard";
+import DeleteDonor from "./components/Dashboard/DeleteDonor"
+import Announcement from "./components/Dashboard/Announcement"
+import AboutUs from "./components/Views/About";
+import Signup from "./components/Auth/Signup";
+import { setLocolStorage } from "./Utils/LocalStorage";
 
 const App = () => {
-  // useEffect(() => {
-  //   setLocolStorage()
-  //   getLocolStorage()
+  
+  
+  useEffect(() => {
+  setLocolStorage()
+  
+  }, )
+  
 
-  // },)
-  const [user, setUser] = useState("")
-  const LoginHandler = (email, password) => {
-    if (email == "p@G.c" && password == "123") {
-      setUser("person")
-      console.log("user logedin")
-    }
-    else {
-      alert("invalid credential")
-      setUser("noperson")
-    }
-  }
-
-  const Loguser = () => {
-    console.log("hello")
-  }
-
+  
   return (
-    <div>
-      
-      <Navbar/>
-      {/* <Routes>
-      <Route path='/' element={<Homepage/>}/>
-        <Route path='/login' element={<Login />}/>
-       
-        <Route path='/User' element={<UserDashboard/>}/>
-        <Route path='/donor' element={<DonorDashboard />}/>
-     </Routes>
-    */}
-    <Slidebar/>
-    <AdminDashboard/>
-      
-      {/* {user=="page" ? <Login LoginHandler={LoginHandler} /> : ""}
+    <>
+      <Navbar />
+      <ScrollWrapper>
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/login" element={<Login  />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/user" element={<UserDashboard />} />
+          <Route path="/donor" element={<DonorDashboard />} />
+          
 
-      {user == "person" ? <div> <Navbar /><ScrollWrapper>  <UserDashboard /><Footer /></ScrollWrapper> </div> : ""}
-      {user == "noperson" ? <div> <Navbar /><ScrollWrapper> <Homepage /><Footer /></ScrollWrapper> </div> : ""} */}
-      {/* <Login/>  */}
-      {/* <Navbar /> */}
-      {/* <ScrollWrapper>  */}
-      {/* <Homepage />  */}
-      {/* <DonorDashboard/> */}
-      {/* <Footer />  */}
-      {/* {/* <UserDashboard/> */}
-      {/* </ScrollWrapper> */}
-    </div>
-  )
-}
+         
+          <Route path="/admin" element={<AdminDashboard />}>
+            <Route index element={<Dashboard />} />
+            <Route path="add" element={<Register />} /> 
+            <Route path="list" element={<DonorList />} />
+            <Route path="delete" element={<DeleteDonor />} /> 
+            <Route path="announcement" element={<Announcement />} /> 
+          </Route>
+        </Routes>
+        
+      </ScrollWrapper>
+      
+    </>
+  );
+};
 
-export default App
+export default App;

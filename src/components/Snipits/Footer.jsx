@@ -1,6 +1,7 @@
 import React from 'react'
 import "remixicon/fonts/remixicon.css";
 import Butoon from './Butoon';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     
@@ -57,8 +58,12 @@ const Footer = () => {
                 <div className="section5 section">
                     <h5>Join Us</h5>
                     <div className="list">
+                        <Link to='/signup'>
                     <Butoon name="Become a donor"/>
+                    </Link>
+                    <Link to='/donor'>
                         <Butoon name="Find donor"/>
+                        </Link>
                     </div>
                 </div>
             </div>

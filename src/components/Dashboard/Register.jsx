@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Butoon from '../Snipits/Butoon';
 
 
-const Signup = () => {
+const Register = () => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -27,10 +27,9 @@ const Signup = () => {
   };
 
   return (
-    <div className='signup-main-div'>
-    <div className="signup-page">
+    <div className="register-page">
       <form onSubmit={handleSubmit} className="register-form">
-        <h1>Register</h1>
+        <h1>Add Donor</h1>
         <div className='hello'>
         <div className="form-group">
           
@@ -131,13 +130,11 @@ const Signup = () => {
             required 
           />
         </div>
-       <Butoon name='Register'/>
+       <Butoon name='Add Donor'/>
         
       </form>
-    </div>
-    <img src="src\assets\Images\signup.gif" alt="" />
     </div>
   );
 };
 
-export default Signup;
+export default Register;

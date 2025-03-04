@@ -1,5 +1,11 @@
 import React from "react";
-import Butoon from "../Snipits/Butoon";
+import Button from "../Snipits/Butoon"; 
+
+const donors = [
+  { name: "Pranjal Jawalkar", phone: "7030821605", bloodGroup: "B+" },
+  { name: "John Doe", phone: "9876543210", bloodGroup: "O+" },
+  { name: "Jane Smith", phone: "9234567890", bloodGroup: "A-" },
+];
 
 const DonorDashboard = () => {
   return (
@@ -12,13 +18,13 @@ const DonorDashboard = () => {
             <input type="text" placeholder="Enter your State" />
             <input type="text" placeholder="Enter your District" />
             <input type="text" placeholder="Enter your City" />
-            <Butoon name="Use My Location" />
+            <Button name="Use My Location" />
           </div>
           <div className="donor-map-div">
             <div className="donor-map">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14889.991471742122!2d79.14158635244884!3d21.092708280439144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4b8f5cd085f03%3A0xe93e897400a93aa6!2sSmt.%20Radhikatai%20Pandav%20College%20of%20Engineering!5e0!3m2!1sen!2sin!4v1737298002375!5m2!1sen!2sin"
-                width="400"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3833.860698249121!2d79.14950427525851!3d21.09728828056927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4b8f5cd085f03%3A0xe93e897400a93aa6!2sSmt.%20Radhikatai%20Pandav%20College%20of%20Engineering!5e1!3m2!1sen!2sin!4v1739760703295!5m2!1sen!2sin"
+                width="100%"
                 height="300"
                 allowFullScreen
                 loading="lazy"
@@ -28,40 +34,39 @@ const DonorDashboard = () => {
           </div>
         </div>
         <div className="donor-blood-div">
-          <select name="Blood-Group" >
-          <option >Select</option>
-            <option >A+</option>
-            <option >A-</option>
-            <option >B+</option>
-            <option >B-</option>
+          <select name="Blood-Group">
+            <option>Select</option>
+            <option>A+</option>
+            <option>A-</option>
+            <option>B+</option>
+            <option>B-</option>
+            <option>O+</option>
+            <option>O-</option>
+            <option>AB+</option>
+            <option>AB-</option>
+            <option>Bombay Blood Group</option>
           </select>
-          <Butoon name="Find"/>
+          <Button name="Find" />
         </div>
       </div>
       <div className="donor-result-div">
         <div className="result-main-div">
-            <div className="donor-data-div">
-                <div className="donor-data-name">Name</div>
-                <div className="donor-data-number">Mobile No.</div>
-                <div className="donor-data-blood">Blood Group</div>
-                <div className="donor-data-contact">Contact</div>
+          <div className="donor-data-div header">
+            <div className="donor-data-name">Name</div>
+            <div className="donor-data-number">Mobile No.</div>
+            <div className="donor-data-blood">Blood Group</div>
+            <div className="donor-data-contact">Contact</div>
+          </div>
+          {donors.map((donor, index) => (
+            <div className="donor-data-div" key={index}>
+              <div className="donor-data-name">{donor.name}</div>
+              <div className="donor-data-number">{donor.phone}</div>
+              <div className="donor-data-blood">{donor.bloodGroup}</div>
+              <div className="donor-data-contact">
+                <Button name="Contact" />
+              </div>
             </div>
-            <div className="donor-data-div">
-                <div className="donor-data-name">Pranjal Jawalkar</div>
-                <div className="donor-data-number">7030821605</div>
-                <div className="donor-data-blood">B+</div>
-                <div className="donor-data-contact"><Butoon name="Contact"/></div>
-            </div>
-            <div className="donor-data-div">
-               
-            </div>
-            <div className="donor-data-div">
-            
-            </div>
-            <div className="donor-data-div">
-               
-            </div>
-            
+          ))}
         </div>
       </div>
     </div>
@@ -69,3 +74,4 @@ const DonorDashboard = () => {
 };
 
 export default DonorDashboard;
+

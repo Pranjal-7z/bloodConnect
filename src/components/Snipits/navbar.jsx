@@ -7,11 +7,11 @@ const navbar = () => {
  
   return (
     <div className='nav-div'>
-        <div className='logo'><img src="src\assets\Images\logo.png" alt="" /></div>
+        <div className='logo'><Link to='/'><img src="src\assets\Images\logo.png" alt="" /></Link></div>
         <div className="category">
            
             <Link to="/" className='link-nav'> <h4>Home</h4></Link> 
-            <h4>About</h4>
+            <Link to="/about" ><h4>About</h4></Link>
             <h4>Article</h4>
            <Link to="/login" className='link-nav' ><h4>Log in</h4></Link> 
             

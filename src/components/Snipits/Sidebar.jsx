@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link, Outlet } from 'react-router-dom'
 
 const Sidebar = () => {
   return (
@@ -12,18 +13,20 @@ const Sidebar = () => {
             </div>
             <div className="slidebar-pages-div">
               <div className="slidebar-page-main">
-                <div className="slidebar-page-name"><h4> <i class="ri-dashboard-line"></i> Dashboard</h4></div>
-                <div className="slidebar-page-name"><h4> <i class="ri-user-add-line"></i> Add Donor</h4></div>
-                <div className="slidebar-page-name"><h4><i class="ri-booklet-line"></i> Donor List</h4></div>
-                <div className="slidebar-page-name"><h4> <i class="ri-delete-bin-6-line"></i> Delete Donor</h4></div>
-                <div className="slidebar-page-name"><h4><i class="ri-megaphone-line"></i> Announcement</h4></div>
+
+               <Link to='/admin'> <div className="slidebar-page-name"><h4> <i class="ri-dashboard-line"></i> Dashboard</h4></div></Link>
+               <Link to='add'><div className="slidebar-page-name"> <h4> <i class="ri-user-add-line"></i> Add Donor</h4></div></Link>
+                <Link to='list'><div className="slidebar-page-name"><h4><i class="ri-booklet-line"></i> Donor List</h4></div></Link>
+               <Link to='delete'> <div className="slidebar-page-name"><h4> <i class="ri-delete-bin-6-line"></i> Delete Donor</h4></div></Link>
+               <Link to='announcement'> <div className="slidebar-page-name"><h4><i class="ri-megaphone-line"></i> Announcement</h4></div></Link>
               </div>
             </div>
             <div className="slidebar-logout-div">
             <div className="slidebar-logout-main">
-            <div className="slidebar-logout-name"><h4> <i class="ri-logout-box-line"></i> Logout</h4></div>
+           <Link to='/login'> <div className="slidebar-logout-name"><h4> <i class="ri-logout-box-line"></i> Logout</h4></div></Link>
             </div>
             </div>
+            
         </div>
     </div>
   )
