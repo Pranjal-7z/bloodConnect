@@ -28,7 +28,7 @@
     },
     {
       "name": "Shivam",
-      "gender": "male",
+      "gender": "Male",
       "profession": "Data Analyst",
       "phone": "9654321098",
       "email": "shivam@gmail.com",
@@ -57,6 +57,18 @@
       "phone": "9432109876",
       "email": "sanket@gmail.com",
       "password": "Sanket@123",
+      "blood_group": "O-",
+      "blood_donated_this_year": 1,
+      "days_since_last_donation": 75,
+      "role": "user"
+    },
+    {
+      "name": "Amar",
+      "gender": "Male",
+      "profession": "Mechanical Engineer",
+      "phone": "9432109876",
+      "email": "amar@gmail.com",
+      "password": "amar@123",
       "blood_group": "O-",
       "blood_donated_this_year": 1,
       "days_since_last_donation": 75,

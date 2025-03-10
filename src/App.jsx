@@ -16,6 +16,7 @@ import Announcement from "./components/Dashboard/Announcement"
 import AboutUs from "./components/Views/About";
 import Signup from "./components/Auth/Signup";
 import { setLocolStorage } from "./Utils/LocalStorage";
+import ArticlePage from "./components/Views/Article";
 
 const App = () => {
   
@@ -36,6 +37,7 @@ const App = () => {
           <Route path="/login" element={<Login  />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/about" element={<AboutUs />} />
+          <Route path="/articles" element={<ArticlePage />} />
           <Route path="/user" element={<UserDashboard />} />
           <Route path="/donor" element={<DonorDashboard />} />
           
