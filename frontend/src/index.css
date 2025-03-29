@@ -571,6 +571,7 @@ li {
 }
 .donor-add-div button {
   width: 10vw;
+  height: 40px;
   background-color: rgb(216, 47, 67);
   border-color: gray;
 }
@@ -602,7 +603,12 @@ li {
   padding: 2% 20%;
 }
 .donor-blood-div Button {
-  background-color: rgb(216, 47, 67);
+ width: 300px;
+ height: 40px;
+ background-color: #d32f2f;
+ color: black;
+ font-size: 2vh;
+ font-family: "Rubik", serif;
 }
 .donor-result-div {
   width: 100%;
@@ -863,44 +869,50 @@ li {
   font-family: "Rubik", serif;
   padding-left: 2%;
 }
-.slide-right-button {
-  width: fit-content;
-  height: fit-content;
 
-  position: absolute;
-  z-index: 999;
-  right: 2%;
-  top: 50%;
-}
-.slide-left-button {
-  width: fit-content;
-  height: fit-content;
-
-  position: absolute;
-  z-index: 999;
-  left: 2%;
-  top: 50%;
-}
-.slide-left-button button {
-  width: 5vh;
-  height: 5vh;
-  border-radius: 50%;
-  border: none;
-}
-.slide-right-button button {
-  width: 5vh;
-  height: 5vh;
-  border-radius: 50%;
-  border: none;
-}
-.campaign-big-slide {
+.campaign-ann-container{
+  width: 100%;
   height: 100%;
-  width: 300%;
-}
-.campaign-big-slide img {
-  aspect-ratio: 100%;
+ 
+  display: flex;
+  align-items: center;
+  padding: 2%;
+  gap: 2%;
+  flex-wrap: nowrap;
+ overflow-x: auto;
 }
 
+.announcement-card{
+  width: 20vw;
+  height: 90%;
+  padding:1.5%;
+  background-color:rgb(241, 244, 255);
+  flex-shrink: 0;
+  border-radius: 15px;
+}
+.ann-title{
+  width: 100%;
+  height: fit-content;
+  font-size: 2vh;
+  
+  font-family: "Rubik", serif;
+  padding: 3%;
+}
+.ann-desc{
+  width: 100%;
+  height: fit-content;
+  font-size: 2vh;
+ 
+  font-family: "Rubik", serif;
+  padding: 3%;
+  margin-top: 3%;
+  padding-left: 5%;
+}
+
+
+.campaign-message-div{
+  padding-top: 1.5%;
+}
 .campaign-contact-div {
   width: 80%;
   height: 10%;
@@ -911,7 +923,7 @@ li {
 .contact-img-div {
   width: 4.5vh;
   height: 4.5vh;
-  background-color: pink;
+  background-color: white;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -929,6 +941,17 @@ li {
 }
 .contact-img-div img {
   height: 100%;
+}
+.workspace{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Rubik", serif; 
+  font-size: 3vh;
+  background-image: url("https://marketplace.canva.com/EAGS5a_OagY/1/0/1600w/canva-purple-aesthetic-background-double-sided-poster-qKj0LvWaing.jpg");
+  background-size:cover ;
 }
 .sidebar-main-div {
   width: 20%;
@@ -1055,6 +1078,7 @@ li {
   padding: 1%;
   
 }
+
 .block1{
   background-color:rgb(21, 202, 183);
 }
@@ -1187,16 +1211,15 @@ li {
 
 .donor-list {
   
- 
   width: 100%;
   height: 92vh;
-padding: 3%;
+  padding: 3%;
   position: absolute;
   bottom: 0;
   right: 0;
   display: flex;
   flex-direction: column;
-  
+  overflow-y: scroll;
   align-items: center;
   font-family: "Rubik", serif;
 }
@@ -1296,6 +1319,7 @@ padding: 3%;
   position: absolute;
   bottom: 0;
   right: 0;
+  overflow: scroll;
  
   
   align-items: center;
@@ -1322,6 +1346,10 @@ padding: 3%;
   flex-wrap: wrap;
   gap: 20px; /* Space between items */
 }
+.announcement-list button{
+  font-size: 2vh;
+  padding-top: -1;
+}
 
 .announcement-item {
   background-color: #f9f9f9;
@@ -1342,7 +1370,10 @@ padding: 3%;
   font-size: 16px;
   color: #555;
 }
-
+.holi{
+  display: flex;
+  justify-content: space-between;
+}
 .create-announcement {
   margin-top: 40px;
 }
@@ -1366,6 +1397,14 @@ padding: 3%;
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 4px;
+  font-size: 16px;
+  width: 100%;
+}
+.date{
+  padding: 10px;
+  border: 2px solid #000000;
+  border-radius: 4px;
+  
   font-size: 16px;
   width: 100%;
 }
@@ -1655,4 +1694,48 @@ height: 230vh;
 .article-card .read-more {
   display: block;
   margin-top: 10px;
+}
+
+.ab-home{
+  width: 100%;
+  height: 100vh;
+  padding-top: 8vh;
+  background-image: url("./assets/Images/Untitled.png");
+  background-size: cover;
+  background-position: center;
+  font-family: "Rubik", serif;
+  padding-left: 3%;
+}
+.ab-home-heading{
+  margin-top: 3%;
+  line-height: 50px;
+}
+.ab-home-heading i{
+  font-size: 3vh;
+}
+.ab-home-content{
+  padding: 5%;
+  width: 100%;
+  font-family: "Rubik", serif;
+  font-size: 2.5vh;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+.ab-content-video{
+  width: 90%;
+  height: 90%;
+  border-radius: 20px;
+  background-color: rgb(228, 228, 228);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.ab-content-video video{
+
+  width: 100%;
+  
 }

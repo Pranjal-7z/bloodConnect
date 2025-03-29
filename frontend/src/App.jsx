@@ -17,6 +17,8 @@ import AboutUs from "./components/Views/About";
 import Signup from "./components/Auth/Signup";
 import { setLocolStorage } from "./Utils/LocalStorage";
 import ArticlePage from "./components/Views/Article";
+import UserProtectedWrapper from "./components/Views/UserProtectedWrapper";
+import AllArticles from "./components/Views/Allarticles";
 
 const App = () => {
   
@@ -37,8 +39,15 @@ const App = () => {
           <Route path="/login" element={<Login  />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/about" element={<AboutUs />} />
-          <Route path="/articles" element={<ArticlePage />} />
-          <Route path="/user" element={<UserDashboard />} />
+          <Route path="/articles" element={<ArticlePage />}/>
+  
+
+           
+          <Route path="/user" element={
+            <UserProtectedWrapper>
+              <UserDashboard />
+            </UserProtectedWrapper>
+            } />
           <Route path="/donor" element={<DonorDashboard />} />
           
 

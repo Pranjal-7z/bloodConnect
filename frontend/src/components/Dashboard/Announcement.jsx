@@ -1,16 +1,24 @@
-import React, { useState } from 'react';
-import Butoon from '../Snipits/Butoon';
-
+import React, { useEffect, useState } from "react";
+import Butoon from "../Snipits/Butoon";
 
 const AnnouncementPage = () => {
-  const [announcements, setAnnouncements] = useState([
-    { id: 1, title: 'Blood Drive Next Week', description: 'We are organizing a blood drive next week on Friday. Come and donate!' },
-    { id: 2, title: 'Urgent Blood Needed', description: 'Urgent blood needed for a patient in the hospital. O+ blood type preferred.' },
-    { id: 3, title: 'New Volunteer Program', description: 'Join our new volunteer program starting next month. Sign up now!' },
-  ]);
+  const [announcements, setAnnouncements] = useState([]);
+  const [newAnnouncement, setNewAnnouncement] = useState({
+    title: "",
+    description: "",
+  });
 
-  const [newAnnouncement, setNewAnnouncement] = useState({ title: '', description: '' });
+  // Fetch announcements from backend
+  useEffect(() => {
+    fetch("http://localhost:4000/announcements")
+      .then((response) => response.json())
+      .then((data) => setAnnouncements(data))
+      .catch((error) =>
+        console.error("Error fetching announcements:", error)
+      );
+  }, []);
 
+  // Handle input change
   const handleChange = (e) => {
     const { name, value } = e.target;
     setNewAnnouncement((prev) => ({
@@ -19,14 +27,46 @@ const AnnouncementPage = () => {
     }));
   };
 
-  const handleCreateAnnouncement = (e) => {
+  // Create new announcement
+  const handleCreateAnnouncement = async (e) => {
     e.preventDefault();
-    if (newAnnouncement.title && newAnnouncement.description) {
-      setAnnouncements([
-        ...announcements,
-        { id: announcements.length + 1, title: newAnnouncement.title, description: newAnnouncement.description },
-      ]);
-      setNewAnnouncement({ title: '', description: '' });
+    if (!newAnnouncement.title || !newAnnouncement.description) return;
+
+    try {
+      const response = await fetch("http://localhost:4000/announcements", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newAnnouncement),
+      });
+
+      if (response.ok) {
+        const createdAnnouncement = await response.json();
+        setAnnouncements([...announcements, createdAnnouncement]);
+        setNewAnnouncement({ title: "", description: "" });
+      } else {
+        console.error("Failed to create announcement");
+      }
+    } catch (error) {
+      console.error("Error creating announcement:", error);
+    }
+  };
+
+  // Delete announcement
+  const handleDeleteAnnouncement = async (id) => {
+    try {
+      const response = await fetch(`http://localhost:4000/announcements/${id}`, {
+        method: "DELETE",
+      });
+
+      if (response.ok) {
+        setAnnouncements(announcements.filter((announcement) => announcement._id !== id));
+      } else {
+        console.error("Failed to delete announcement");
+      }
+    } catch (error) {
+      console.error("Error deleting announcement:", error);
     }
   };
 
@@ -41,9 +81,16 @@ const AnnouncementPage = () => {
         ) : (
           <div className="announcement-list">
             {announcements.map((announcement) => (
-              <div key={announcement.id} className="announcement-item">
-                <h3>{announcement.title}</h3>
+              <div key={announcement._id} className="announcement-item">
+                <div className="holi"><h3>{announcement.title}</h3><button 
+                  onClick={() => handleDeleteAnnouncement(announcement._id)}
+                  className="delete-button"
+                >
+                 <i class="ri-delete-bin-6-line"></i>
+                </button></div>
+                
                 <p>{announcement.description}</p>
+                
               </div>
             ))}
           </div>
@@ -74,7 +121,7 @@ const AnnouncementPage = () => {
               required
             />
           </div>
-          <Butoon name='submit'/>
+          <Butoon name="Submit" />
         </form>
       </section>
     </div>

@@ -1,20 +1,31 @@
-import React, { useState } from 'react';
-
+import React, { useEffect, useState } from "react";
 
 const DeleteDonor = () => {
-  const [donors, setDonors] = useState([
-    
-      { id: 1, name: 'shivam Thawkar', bloodGroup: 'O+', age: 28, gender: 'Male', mobileNo: '1234567890' },
-      { id: 2, name: 'Amar pathade', bloodGroup: 'A-', age: 34, gender: 'Female', mobileNo: '0987654321' },
-      { id: 3, name: 'kartik Wankhede', bloodGroup: 'B+', age: 22, gender: 'Male', mobileNo: '1122334455' },
-      { id: 4, name: 'akshad NAgpure', bloodGroup: 'AB+', age: 26, gender: 'Female', mobileNo: '6677889900' },
-      
-    
-  ]);
+  const [donors, setDonors] = useState([]);
 
-  const handleDelete = (id) => {
-    const updatedDonors = donors.filter((donor) => donor.id !== id);
-    setDonors(updatedDonors);
+  // Fetch donors from backend
+  useEffect(() => {
+    fetch("http://localhost:4000/donors")
+      .then((response) => response.json())
+      .then((data) => setDonors(data))
+      .catch((error) => console.error("Error fetching donors:", error));
+  }, []);
+
+  // Delete donor function
+  const handleDelete = async (id) => {
+    try {
+      const response = await fetch(`http://localhost:4000/donors/${id}`, {
+        method: "DELETE",
+      });
+
+      if (response.ok) {
+        setDonors(donors.filter((donor) => donor._id !== id));
+      } else {
+        console.error("Failed to delete donor");
+      }
+    } catch (error) {
+      console.error("Error deleting donor:", error);
+    }
   };
 
   return (
@@ -25,7 +36,6 @@ const DeleteDonor = () => {
           <tr>
             <th>Name</th>
             <th>Blood Group</th>
-            <th>Age</th>
             <th>Gender</th>
             <th>Mobile No</th>
             <th>Actions</th>
@@ -33,18 +43,17 @@ const DeleteDonor = () => {
         </thead>
         <tbody>
           {donors.map((donor) => (
-            <tr key={donor.id}>
-              <td>{donor.name}</td>
+            <tr key={donor._id}>
+              <td>{donor.fullname.firstname} {donor.fullname.lastname}</td>
               <td>{donor.bloodGroup}</td>
-              <td>{donor.age}</td>
               <td>{donor.gender}</td>
               <td>{donor.mobileNo}</td>
               <td>
-                <button 
+                <button
                   className="delete-button"
-                  onClick={() => handleDelete(donor.id)}
+                  onClick={() => handleDelete(donor._id)}
                 >
-                  <i className="ri-delete-bin-line"></i>
+                  <i className="ri-delete-bin-line"></i> Delete
                 </button>
               </td>
             </tr>

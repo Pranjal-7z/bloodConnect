@@ -1,22 +1,72 @@
 import { Circle } from 'rc-progress'
+import { useEffect, useState, useContext, useRef } from 'react';
 import React from 'react'
 import Button from '../Snipits/Butoon'
 import Footer from '../Snipits/Footer'
-import { useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
+import { AuthContext } from "../../Context/AuthProvider";
+import axios from "axios"
 
 const UserDashboard = () => {
-  const storedUser = JSON.parse(localStorage.getItem("logeduser"));
+  const { user, setUser } = useContext(AuthContext);
+  const [loading, setLoading] = useState(true);
+  const [announcements, setAnnouncements] = useState([]);
+  const campaignRef = useRef(null);
+ 
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        const token = localStorage.getItem("token"); 
+  
+        if (!token) {
+          console.error("No token found");
+          return;
+        }
+  
+        const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/profile`, {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+  
+        setUser(response.data); 
+        console.log(response.data);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching user data:", error);
+        setLoading(false);
+      }
+    };
+  
+    fetchUserData();
+  }, []);
+  
 
-  const user={
-    name:storedUser.name ,
-    profession:storedUser.profession,
-    number:storedUser.phone,
-    email:storedUser.email,
-    blood:storedUser.blood_group,
-    donation:storedUser.blood_donated_this_year,
-    days:storedUser.days_since_last_donation,
-    gender:storedUser.gender,
-  }
+
+  useEffect(() => {
+    const fetchAnnouncements = async () => {
+      try {
+        const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/announcements`);
+        setAnnouncements(response.data);
+      } catch (error) {
+        console.error("Error fetching announcements:", error);
+      }
+    };
+
+    fetchAnnouncements();
+  }, []);
+
+  const scrollRight = () => {
+    if (campaignRef.current) {
+      campaignRef.current.scrollLeft += 300; // Adjust scroll amount
+    }
+  };
+
+  // Scroll Left
+  const scrollLeft = () => {
+    if (campaignRef.current) {
+      campaignRef.current.scrollLeft -= 300; // Adjust scroll amount
+    }
+  };
+  
   return (
     <div>
       <div className="db-main-div">
@@ -24,12 +74,12 @@ const UserDashboard = () => {
           <div className="db-profile-info">
             <div className="profile-photo-div">
               <div className="profile-img-div"></div>
-              <div className="profile-name-div"><h3>{user.name}</h3> <p>{user.profession}</p></div>
+              <div className="profile-name-div"><h3>{user.fullname?.firstname} {user.fullname?.lastname}</h3> <p>{user.profession}</p></div>
             </div>
             <div className="profile-detail-div">
               <div className="detail-main-div">
                 <h4>Phone</h4>
-                <div className="detail-info-div"> <h5><i class="ri-phone-line"></i>  {user.number}</h5></div>
+                <div className="detail-info-div"> <h5><i class="ri-phone-line"></i>  {user.mobileNo}</h5></div>
               </div>
               <div className="detail-main-div">
                 <h4>Email</h4>
@@ -37,80 +87,85 @@ const UserDashboard = () => {
               </div>
               <div className="detail-main-div">
                 <h4>Blood Group</h4>
-                <div className="detail-info-div">  <h5><i class="ri-drop-line"></i>  {user.blood}</h5></div>
+                <div className="detail-info-div">  <h5><i class="ri-drop-line"></i>  {user.bloodGroup}</h5></div>
               </div>
             </div>
           </div>
           <div className="db-chart-info">
             <div className="chart-main-div">
               <div className="chart-name-div"><h3>Donated This Year</h3></div>
-              <div className="chart-progress-div"><Circle className='circle1' percent={(user.donation/(user.gender=="Male" ?4:3))*100} strokeWidth={8} trailWidth={8} strokeColor="#003290" /></div>
+              <div className="chart-progress-div"><Circle className='circle1' percent={(user.totalDonation/(user.gender=="Male" ?4:3))*100} strokeWidth={8} trailWidth={8} strokeColor="#003290" /></div>
               <div className="chart-num-div">
                 <div className="total-num-div"><h4>total: {(user.gender=="Male" ?4:3)}</h4></div>
-                <div className="outoff-num-div"><h4>Donated: {user.donation}</h4></div>
+                <div className="outoff-num-div"><h4>Donated: {user.totalDonation}</h4></div>
               </div>
             </div>
             <div className="chart-main-div">
               <div className="chart-name-div"><h3>Next Donation</h3></div>
-              <div className="chart-progress-div"><Circle className='circle1' percent={((user.days)/(user.gender=="Male" ?90:120))*100} strokeWidth={8} trailWidth={8} strokeColor="#FF7700" /></div>
+              <div className="chart-progress-div"><Circle className='circle1' percent={((user.lastDonation)/(user.gender=="Male" ?90:120))*100} strokeWidth={8} trailWidth={8} strokeColor="#FF7700" /></div>
               <div className="chart-num-div">
                 <div className="total-num-div"><h4>total: <br />{(user.gender=="Male" ?90:120)} days</h4></div>
-                <div className="outoff-num-div"><h4>remaining : <br /> {(user.gender=="Male" ?90:120)-user.days} days</h4></div>
+                <div className="outoff-num-div"><h4>remaining : <br /> {(user.gender=="Male" ?90:120)-user.lastDonation} days</h4></div>
               </div>
             </div>
             <div className="chart-main-div">
               <div className="chart-name-div"><h3>Your Status</h3></div>
-              <div className="chart-status-div" ><h1>{((user.gender=="Male" ?90:120)-user.days)<=0?"Available" :"Not Available"}</h1></div>
+              <div className="chart-status-div" ><h1>{((user.gender=="Male" ?90:120)-user.lastDonation)<=0?"Available" :"Not Available"}</h1></div>
               <div className="chart-num-div">
                 <Button name="refresh" />
               </div>
             </div>
             <div className="chart-main-div">
-              <div className="chart-name-div"><h3>Nearby Hospitals</h3></div>
+              <div className="chart-name-div"><h3>Save lives</h3></div>
 
               <div className="chart-map-div">
-                <img src="src\assets\Images\nearby.png" alt="" />
+                <img src="src\assets\Images\blood-letting-blood-donation.gif" alt="" />
               </div>
             </div>
           </div>
           <div className="db-campaign-info">
             <div className="campaign-sub-div">
               <div className="campaign-slide-div">
-                <div className="slide-left-button"><button><i class="ri-arrow-left-line"></i></button></div>
-                <div className="slide-right-button"><button><i class="ri-arrow-right-line"></i></button></div>
-                <div className="campaign-big-slide">
-                  <img src="src\assets\Images\campaign.jpg" />
-                  <img src="https://images.squarespace-cdn.com/content/v1/5d0dc22f70b70c00015d510a/1607685498057-5M01Z78GKLQL2ISIFCDA/coronavirus-organic-social-facebook-1200x630.jpg?format=1500w" />
-                <img src="https://scontent.fnag1-4.fna.fbcdn.net/v/t1.6435-9/120456231_4096773113684125_872639428834088546_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=rm9CiccVoLcQ7kNvgHkfJEv&_nc_zt=23&_nc_ht=scontent.fnag1-4.fna&_nc_gid=A3AIC8BJcwTM0oUPDDjXmFX&oh=00_AYAYtT6QDRmx0YgafBQUOANcmrkk2kCNR9Ksokwc5U1TTw&oe=67B9DBD3" />
+                <div className="campaign-ann-container">
+                 
+                {announcements.length > 0 ? (
+                    announcements.map((announcement, index) => (
+                      <div key={index} className="announcement-card">
+                        <div className="ann-title"><h3>{announcement.title}</h3></div>
+                        <div className="ann-desc"> <p>{announcement.description}</p></div>
+                       
+                        
+                      </div>
+                    ))
+                  ) : (
+                    <p>No announcements available.</p>
+                  )}
 
-            </div>
+                </div>
           </div>
           <div className="campaign-message-div">
-            <div><h1>Contacts</h1></div>
+            <div><h1>Blood Banks</h1></div>
             <div className="campaign-contact-div">
-              <div className="contact-img-div"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6Hb5xzFZJCTW4cMqmPwsgfw-gILUV7QevvQ&s" alt="" /></div>
-              <div className="contact-name-div"><h3>Puja Gautam</h3></div>
+              <div className="contact-img-div"><img src="https://justdoctors.in/logo/H2129-Logo.png" alt="" /></div>
+              <div className="contact-name-div"><Link to='https://www.hedgewarbloodbanknagpur.org/index.php'><h3>Hedgewar B.B.</h3></Link></div>
             </div>
             <div className="campaign-contact-div">
-              <div className="contact-img-div"><img src="https://media.licdn.com/dms/image/v2/D4D03AQFr_zAzCpfOSw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1666289023944?e=2147483647&v=beta&t=qmcjSKBv2uAGL7cVFW6eFZUdLij3gZMA_ko_n_pO-RI" alt="" /></div>
-              <div className="contact-name-div"><h3>Shivam Thawkar</h3></div>
+              <div className="contact-img-div"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR77sUuZrg6WAf5H3MotR3AzagXMyNkTpeWYg&s" alt="" /></div>
+              <div className="contact-name-div"><Link to='https://justdoctors.in/hospital/Jeevan-Jyoti-Blood-Bank/H2131'><h3>Jeevan Jyoti B.B.</h3></Link></div>
             </div>
             <div className="campaign-contact-div">
-              <div className="contact-img-div"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFUtv2VxIrqmzoEU1CCeo6QrPhCyVRLf3sfQ&s" alt="" /></div>
-              <div className="contact-name-div"><h3>Amar Pathade</h3></div>
+              <div className="contact-img-div"><img src="https://content.jdmagicbox.com/comp/agra/q2/0562px562.x562.240219011109.h2q2/catalogue/aastha-charitable-blood-center-blood-bank-agra-blood-banks-112f06mhcr.jpg" alt="" /></div>
+              <div className="contact-name-div"><Link to='https://www.medindia.net/submission/directory/contactdetails.asp?dirid=10&id=54735'><h3>Daga Hospital</h3></Link></div>
             </div>
             <div className="campaign-contact-div">
-              <div className="contact-img-div"><img src="https://www.bollywoodhungama.com/wp-content/uploads/2025/01/620x450-4509.jpg" alt="" /></div>
-              <div className="contact-name-div"><h3>Kartik Wankhede</h3></div>
+              <div className="contact-img-div"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwft0jHfw9Viib8hGxAKUN2FzwnD6A9smeGw&s" alt="" /></div>
+              <div className="contact-name-div"><Link to='https://lifebloodcouncil.org/product/lifeline-blood-bank-components-apherisis-centre-blood-bank/'><h3>Lifeline Blood Bank</h3></Link></div>
             </div>
             <div className="campaign-contact-div">
-              <div className="contact-img-div"><img src="https://media.licdn.com/dms/image/v2/C4E03AQEPpzg3Vh48pw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1649242019971?e=2147483647&v=beta&t=Aot-i_BqgA8TBdougCNGxqbsF89-7GD-ftrKaHjLZnU" alt="" /></div>
-              <div className="contact-name-div"><h3>Alok Raut</h3></div>
+              <div className="contact-img-div"><img src="https://justdoctors.in/logo/H2132_logo.jpg" alt="" /></div>
+              <div className="contact-name-div"><Link to="https://lifebloodcouncil.org/product/ayush-blood-bank/"><h3>Ayush Blood Bank </h3></Link></div>
             </div>
-            <div className="campaign-contact-div">
-              <div className="contact-img-div"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPJXSRjQDqoNLGG4kHCjPFHyEbApxvO3ehZA&s" alt="" /></div>
-              <div className="contact-name-div"><h3>NIGGA Nagpure</h3></div>
-            </div>
+            
           </div>
         </div>
       </div>
