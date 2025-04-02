@@ -15,19 +15,15 @@ import DeleteDonor from "./components/Dashboard/DeleteDonor"
 import Announcement from "./components/Dashboard/Announcement"
 import AboutUs from "./components/Views/About";
 import Signup from "./components/Auth/Signup";
-import { setLocolStorage } from "./Utils/LocalStorage";
+
 import ArticlePage from "./components/Views/Article";
 import UserProtectedWrapper from "./components/Views/UserProtectedWrapper";
-import AllArticles from "./components/Views/Allarticles";
+
 
 const App = () => {
   
   
-  useEffect(() => {
-  setLocolStorage()
-  
-  }, )
-  
+ 
 
   
   return (

@@ -23,22 +23,23 @@ const UserDashboard = () => {
           return;
         }
   
-        const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/profile`, {
-          headers: { Authorization: `Bearer ${token}` },
+        const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/profile`, { 
+          headers: { Authorization: `Bearer ${token}` }, 
+          withCredentials: true,
         });
   
-        setUser(response.data); 
-        console.log(response.data);
-        setLoading(false);
+        setUser(response.data);
       } catch (error) {
         console.error("Error fetching user data:", error);
-        setLoading(false);
       }
     };
   
     fetchUserData();
-  }, []);
+  }, [setUser]);  // ✅ Add `setUser` as a dependency
   
+  const token = localStorage.getItem("token");
+
+
 
 
   useEffect(() => {
@@ -79,15 +80,15 @@ const UserDashboard = () => {
             <div className="profile-detail-div">
               <div className="detail-main-div">
                 <h4>Phone</h4>
-                <div className="detail-info-div"> <h5><i class="ri-phone-line"></i>  {user.mobileNo}</h5></div>
+                <div className="detail-info-div"> <h5><i className="ri-phone-line"></i>  {user.mobileNo}</h5></div>
               </div>
               <div className="detail-main-div">
                 <h4>Email</h4>
-                <div className="detail-info-div">  <h5><i class="ri-mail-line"></i>  {user.email}</h5></div>
+                <div className="detail-info-div">  <h5><i className="ri-mail-line"></i>  {user.email}</h5></div>
               </div>
               <div className="detail-main-div">
                 <h4>Blood Group</h4>
-                <div className="detail-info-div">  <h5><i class="ri-drop-line"></i>  {user.bloodGroup}</h5></div>
+                <div className="detail-info-div">  <h5><i className="ri-drop-line"></i>  {user.bloodGroup}</h5></div>
               </div>
             </div>
           </div>
