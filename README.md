@@ -14,9 +14,8 @@ I also integrated a **Botpress chatbot** to assist users in navigating the platf
 
 ## 🌟 Features
 
-- 🔍 Find nearby blood donors and recipients
+- 🔍 Find blood donors and recipients
 - 🩸 Match users based on blood group
-- 🧭 Location-based user filtering (without GPS tracking)
 - 💬 Chatbot integration using Botpress
 - 🔐 Secure user authentication and login
 - 📊 Dashboard for managing users and requests
@@ -29,7 +28,7 @@ I also integrated a **Botpress chatbot** to assist users in navigating the platf
 - **Backend**: Node.js, Express.js  
 - **Database**: MongoDB  
 - **Chatbot**: Botpress  
-- **Hosting**: (Optional section: Add Firebase, Vercel, or your platform here if applicable)
+
 
 ---
 
@@ -38,6 +37,6 @@ I also integrated a **Botpress chatbot** to assist users in navigating the platf
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/blood-bond.git
-cd blood-bond
+git clone https://github.com/Pranjal-7z/bloodConnect.git
+
 
